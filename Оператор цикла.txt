@@ -1,0 +1,286 @@
+Дворецкий Никита Сергеевич
+БФБО-02-20
+
+1)
+#include <iostream>
+using namespace std;
+int main()
+{
+  setlocale(LC_ALL, "rus");
+
+  int age = 0; 
+  intmaxAge = 0; 
+  intminAge = 100; 
+  intsum = 0;    
+  intaverage = 0; 
+  intamount = 0; 
+
+  cout<< "Введите количество посетителей спортзала: ";
+  cin>> amount;
+
+  for (inti = 0; i< amount; i++)
+{
+
+  cout<< "Введите возраст " << i + 1 << "-го посетителя: ";
+  cin>>age;
+
+  if (age>maxAge) 
+    maxAge = age; 
+  if (age <minAge)  
+    minAge = age;
+
+  sum += age; // накопление общей суммы
+}
+
+  average = sum / amount; // подсчет среднего возраста
+
+  cout<< "\nСредний возраст всех посетителей: " <<average<<endl;
+  cout<< "\nСамый взрослый: " <<maxAge<<endl;
+  cout<< "\nСамый молодой: " <<minAge<<endl;
+
+  return 0;
+}
+
+
+
+
+2)
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  setlocale(LC_ALL, "rus");
+
+  int boxWithApples = 15;
+  intamountBoxesForSale = 0; 
+  cout<< "Сейчас на складе " <<boxWithApples<< " ящиков с яблоками.\n\n";
+  for (int i = 1;  ; i++) 
+{
+
+  cout<< "Сколько ящиков загрузить в " << i << "-ю машину? ";
+  cin>>amountBoxesForSale;
+
+  if (amountBoxesForSale>boxWithApples)
+{
+  cout<< "\nНа складе недостаточно товара!";
+  cout<< "Осталось только " <<boxWithApples<< " ящиков\n\n";
+  i--; 
+}
+  else
+{
+  boxWithApples -= amountBoxesForSale; 
+  cout<< "Осталось " <<boxWithApples<< " ящиков.\n";
+}
+  if (boxWithApples == 0)
+{  
+  cout<< "Яблоки закончились! Давай до свидания!\n";
+  break;
+}
+  
+  return 0;
+}
+
+
+
+3)
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  intstartDia(0);
+  intendDia(0);
+  int suma(0);
+
+  cout<< "Введите начало диапазона : ";
+  cin>>startDia;
+  cout<<endl;
+  cout<< "Введите конец диапазона :" ;
+  cin>>endDia;
+
+  inti = startDia;
+  while (i<= endDia)
+{
+  if(i % 2 !=0)
+}
+  cout<<i<< " ";
+  suma +=i;
+{
+  i++;
+}
+  cout<<"Сумманечетныхчисел c"<<startDia<<"по" <<endDia<< "= " <<suma<<endl ;
+  return 0 ;
+}
+
+
+
+
+4)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  setlocale(LC_ALL, "rus");
+
+  int height = 0; 
+  cout<< "Введите высоту  равнобедренного треугольника: ";
+  cin>> height;
+  for (inti = 0; i< height; i++)
+    {
+  for (int j = 1; j < height - i; j++)
+        {
+  cout<< ' ';
+        }   
+  for (int j = height - 2 * i; j <= height; j++)
+        {
+  cout<< '^';
+        }           
+  cout<<endl;
+}
+  return 0;
+} 
+
+
+
+
+5)
+
+#include <stdio.h>
+main() 
+{
+  int a, m;
+  scanf("%d",&a);
+    m = a%10;
+    a = a/10;
+  while (a > 0) {
+  if (a%10 > m)
+            m = a%10;
+        a = a/10;
+    }
+  printf("%d\n", m);
+}
+
+
+
+
+7)
+
+#include <stdio.h>
+main() 
+{
+  unsignedintn,i,s,m;
+  scanf("%d", &n);
+    s = 0;
+  for (i=1;i<=n;i++) s += i;
+    m = n*(n+1) / 2;
+  printf("%d\n%d\n",s,m);
+}
+
+
+
+
+9)
+#include <stdio.h>
+main() 
+{
+    short i;
+    for (i=32;i<=127;i++) {
+        printf(" %3d-%c",i,i);
+        if (i%10 == 0) printf("\n");
+    }
+    printf("\n");
+}
+
+
+
+
+10)
+#include <stdio.h>
+main() 
+{
+    int n,even,odd;
+    scanf("%d",&n);
+    even = 0; 
+    odd = 0; 
+    while (n>0) {
+        if (n%2 == 0) even += 1;
+        else odd += 1;
+        n = n/10;
+    }
+    printf("четных - %d, нечетных - %d\n", even, odd);
+}
+
+
+
+
+11)
+#include <stdio.h>
+main() 
+{
+    unsigned int n,i,f1,f2,b;
+    scanf("%d",&n);
+    f1 = 1;
+    f2 = 2;
+    printf("%d %d ",f1,f2);
+    for (i=3; i<=n; i++) {
+        printf("%d ", f1+f2);
+        b = f1;
+        f1 = f2;
+        f2 = b + f1;
+    }
+    printf("\n");
+}
+
+
+
+
+12)
+#include <stdio.h>
+main() 
+{
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    for (a;a<=b;a+=c) printf("%d ", a);
+    printf("\n");
+}
+
+
+
+
+13)
+#include <stdio.h>
+main() 
+{
+    unsigned int n,m;
+    scanf("%d",&n);
+    m = 0;
+    while (n > 0) {
+        m = m*10 + n%10;
+        n = n/10;
+    }
+    printf("%d\n",m);    
+}
+
+
+
+
+14)
+#include <stdio.h>
+main() 
+{
+    int n, s, m;
+    scanf("%d",&n);
+    s = 0;
+    m = 1;
+    while (n>0) {
+        s += n%10;
+        m *= n%10;
+        n = n/10;
+    }
+    printf("Сумма: %d\nПроизведение: %d\n", s, m);
+}
+

@@ -1,0 +1,404 @@
+ƒворецкий Ќикита Ѕ‘Ѕќ-02-20
+
+1)
+
+#include <iostream> 
+
+using namespace std;
+
+
+
+int main()
+
+{
+
+  setlocale(LC_ALL,"rus");
+
+  
+
+  int digit = 0;
+
+  double digit2 = 0;
+
+  char symbol = 0;
+
+  bool TrueOrFalse = 0;
+
+  
+cout << "¬ведите целое число: ";
+
+  cin >> digit;
+
+  cout << "¬ведите вещественное число: ";
+
+  cin >> digit2;
+
+  cout << "¬ведите символ: ";
+
+  cin >> symbol;
+
+  cout << "¬ведите 0 или 1: ";
+  cin >> TrueOrFalse;
+
+  cout << endl << endl;
+
+  cout << "÷елое число: " << digit << endl;
+
+  cout << "¬ещественное число: " << digit2 << endl;
+
+  cout << "—имвол: " << symbol << endl;
+
+  cout << "bool: " << TrueOrFalse << endl;
+
+  
+  
+  return 0;
+
+} 
+
+
+
+2)
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+
+{
+
+  setlocale(LC_ALL,"rus");
+
+
+  char a=0,b=0,c=0,d=0,e=0;
+
+  cout<<"¬ведите слово из п€ти символов: "<<endl;
+
+  cin>>a>>b>>c>>d>>e;
+
+  cout<<"¬аше слово: "<<a<<b<<c<<d<<e<<endl;
+
+  return 0;
+
+}
+
+
+
+
+3)
+
+#include <iostream>
+using
+ namespace std;
+
+
+int main()
+
+{
+
+   setlocale(LC_ALL,"rus");
+
+   
+int a, b;
+
+   cout << "¬ведите первое число: ";
+
+   cin >> a;
+ 
+  cout << "¬ведите второе число: ";
+
+   cin >> b;
+
+   cout <<a<<"-"<<b<<"="<< a - b<<endl;
+
+   cout << a << "+" << b << "=" << a + b << endl;
+
+   cout << a << "*" << b << "=" << a * b << endl;
+
+   cout << a << "/" << b << "=" << a / b << endl;
+
+   cout <<"("<<a << "+" << b <<" )/2"<< "=" << a * b << endl;
+
+   
+   return 0;
+
+}
+
+
+
+4)
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+    setlocale(LC_ALL,"rus");
+
+    
+int n, m;
+
+    double k;
+
+    cout << "¬ведите количество клеток, не менее одной: ";
+
+    cin >> n;
+
+    cout << "¬ведите количесвто зайцев: ";
+
+    cin >> m;
+
+    k = m / n;
+
+    if (k >= 1)cout << (m + n - 1) / n;
+
+    else cout << 1;
+
+
+    
+    return 0;
+
+}
+
+
+
+5)
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+
+{
+ 
+   setlocale(LC_ALL,"rus");
+
+   short n = 0;
+
+   for (int m = 1; m <= 100; ++m)
+
+    {
+
+        n = n + m;
+
+    }
+
+    cout << "—умма целых чисел от 1 до 100: " << n << endl;
+
+
+    
+    return 0;
+
+}
+
+
+
+
+
+6)
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+    setlocale(LC_ALL,"rus");
+
+    int a, S, P;
+
+    cout << "¬ведите сторону: ";
+
+    cin >> a;
+
+    P = 4 * a;
+ 
+   S = a * 2;
+
+    cout << "S=: " << S << endl << "P=: " << P << endl;
+
+
+    
+    return 0;
+
+}
+
+
+
+
+7)
+
+#include <iostream>
+
+#include <math.h>
+
+
+using namespace std;
+
+
+int main()
+
+{
+ 
+    setlocale(LC_ALL,"rus");
+
+
+     int a, b, c;
+
+     cout << "¬ведите первый катит: ";
+
+     cin >> a;
+
+     cout << "¬ведите второй катит: ";
+
+     cin >> b;
+
+     c = sqrt(pow(a,2) + pow(b,2));
+
+     cout << "√ипатинуза равна: " << c << endl;
+
+
+    
+    return 0;
+
+}
+   
+
+
+
+8)
+
+#include <iostream>
+
+#include <math.h>
+
+using namespace std;
+
+
+int main()
+
+{
+
+    
+     setlocale(LC_ALL,"rus");
+
+
+
+     int n, k;
+
+     double m;
+
+     cout << "¬ведите количесвто школьников: ";
+
+     cin >> n;
+
+     cout << "¬ведите количесвто €блок: ";
+
+     cin >> k;
+
+     m = n / k;
+
+     if (m >= 1)cout << (k + n - 1) / n;
+
+     else cout << 1;
+
+
+
+     return 0;
+
+
+}
+
+
+
+9) 
+
+#include <iostream>
+
+#include <math.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    setlocale(LC_ALL,"rus");
+
+    
+int x,f;
+
+    cout << "¬ведите значение x: ";
+
+    cin >> x;
+
+    f = x*x+3*x-100;
+
+    cout << "f(x): " << f << endl;
+    
+
+
+    return 0;
+
+}
+
+
+
+10)
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+   char surname[12];
+
+   char firstname[12];
+
+   char middlename[12];
+
+   char gruppname;
+
+   int number;
+
+   cout << "¬ведите свое им€: ";
+
+   cin >> surname;
+
+   cout << "¬ведите свою фамилию: ";
+
+   cin >> firstname;
+
+   cout << "¬ведите свое отчество: ";
+
+   cin >> middlename;
+
+   cout << "¬ведите название группы: ";
+
+   cin >> gruppname;
+
+   cout << "¬ведите номер группы: ";
+
+   cin >> number;
+
+   
+cout << surname << firstname << middlename << gruppname << number;
+
+
+   
+return 0;
+
+ 
+}
