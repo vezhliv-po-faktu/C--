@@ -1,0 +1,265 @@
+1)
+
+#include <iostream>
+#include <string>
+#include <clocale>
+
+using namespace std;
+
+struct Aeroflot
+{
+	string pynkt;
+	int num_r;
+	string type;
+};
+
+void vvod_dan(Aeroflot *a,const int & k)
+{
+
+	for(int i(0);i<k;++i)
+	{
+		cout<<"ВВедите пункт назначения:";
+		cin>>a[i].pynkt;
+		cout<<"ВВедите номер рейса:";
+		cin>>a[i].num_r;
+		cout<<"ВВедите тип самолета:";
+		cin>>a[i].type;
+	}
+}
+
+void sort_nomr(Aeroflot *a,const int &k)
+{
+	for(int i(k-1);i>=0;i--)
+		for(int j(0);j<i;j++)
+			if(a[j].num_r>a[j+1].num_r)
+				swap(a[j].num_r,a[j+1].num_r);
+}
+
+void sravn(Aeroflot *a,const int &k,string &s)
+{
+
+	int n(0);
+	for(int i(0);i<k;++i)
+	{
+		if(a[i].pynkt==s)cout<<a[i].num_r<<" "<<a[i].type<<endl;
+		else n++;
+
+	}
+	if(n==k)cout<<"Таких рейсов нет\n";
+
+}
+
+int main()
+{	setlocale(LC_CTYPE,"rus");
+
+	Aeroflot *air;
+	const int kol=7;
+	air=new Aeroflot[kol];
+
+	vvod_dan(air,kol);
+	sort_nomr(air,kol);
+	string str;
+	cout<<endl<<"Введите пункт назначения:";
+	cin>>str;
+	sravn(air,kol,str);
+	delete []air;
+	return 0;
+}
+
+
+
+
+
+2)
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+ 
+const int n = 7; 
+ 
+int main() 
+{
+    int w;
+    setlocale(LC_ALL, "Russian"); 
+ 
+    struct AEROFLOT {
+        char* destination; 
+        char* tip; 
+        int nom; 
+    }
+    cout << "введите кол-во рейсов ";
+    cin >> w;
+    AEROFLOT* air = new AEROFLOT[w];
+    //cout<<"Ожидается ввод данных"<<'\n'<<'\n';
+ 
+    for (int i = 0; i < w; i++) {
+        cout << "Номер рейса: ";
+        cin >> air[i].nom;
+        cout << "Пункт назначения: ";
+        char s[50];
+        cin >> s;
+        air[i].destination = new char[strlen(s) + 1];
+        strcpy(air[i].destination, s);
+        cout << "Тип самолёта: ";
+        char t[50];
+        cin >> t;
+        air[i].tip = new char[strlen(t) + 1];
+        strcpy(air[i].tip, t);
+        cout << '\n';
+    } //for
+ 
+    char str[50]; 
+    cout << "\n\nПоиск рейсов: " << endl;
+    cout << "Введите пожалуйста название самолёта: ";
+    cin >> str; 
+ 
+    cout << '\n' << "Информация о рейсах:" << '\n' << '\n';
+    for (int i = 0; i < w; i++) {
+        if (!(strcmp(str, air[i].tip)))
+        {
+            cout << "Номер рейса: " << air[i].nom << '\n';
+            cout << "Пункт назначения: "; puts(air[i].destination);
+            cout << "Тип самолёта: "; puts(air[i].tip);
+        }
+        else cout << "рейсов нет!" << '\n' << '\n';
+        //if
+    } //for
+    
+    {
+        int j, k;
+        AEROFLOT nom;
+        for (j = 0; j < w - 1; j++) {
+            for (k = j + 1; k < w; k++) {
+                if (air[j].nom > air[k].nom)
+                {
+                    nom = air[j];
+                    air[j] = air[k];
+                    air[k] = nom;
+                }
+            }
+        }
+    }
+ 
+    getch();
+    return 0;
+}
+
+
+
+3)
+
+#include <StdAfx.h>
+#include <iostream>
+#include <locale.h>
+#include <math.h>
+using namespace std;
+ 
+struct marsh
+ {
+  char *begst;
+  char *term;
+  int numer;
+};
+ 
+ 
+marsh trafic[8];
+ 
+ 
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    for(int i=1; i<=8; i++)
+    {
+        trafic[i].begst = (char*)malloc(30*sizeof(char));
+        trafic[i].term = (char*)malloc(30*sizeof(char));
+    }
+ 
+      for(int i = 1; i <= 8 ; i++)
+        {
+                cout << "Маршрут номер:  " << i <<"\n";
+                trafic[i].numer = i;
+                cout<< "Название начального пункта маршрута: ";
+                cin >> trafic[i].begst;
+                cout << "Конечного пункта: ";
+                cin >> trafic[i].term;
+        }
+ 
+      cout << "Введите название пункта: ";
+      char *naz;
+      naz=(char*)malloc(30*sizeof(char));
+      cin >>naz;
+ 
+      int k=0;
+      for (int i=1; i<=8; i++)
+      {
+          if ( (strcmp(trafic[i].begst, naz) ==0) || (strcmp(trafic[i].term, naz) ==0))
+          {     
+              cout << "Маршрут номер:  " << trafic[i].numer <<"\n";
+              cout << "Название начального пункта маршрута: " << trafic[i].begst<< "\n";
+              cout << "Конечного пункта: " << trafic[i].term << "\n";
+          k++;
+          }
+          
+      }
+      if(k==0) cout << "Таких маршрутов нет\n";
+              
+}
+
+
+4)
+
+//создать массив структур о маршрутах
+#include <cstdlib> 
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+    int i,n,np;
+    bool priz=true;
+    struct {
+    	     string np;
+    	     string kp;
+    	     int nom;
+	}  marsh[8];   
+    for (int i=0; i<8; i++)
+    {
+      cout<<"record "<<i+1<<":"<<endl;
+      cout<<"from: ";  cin>>marsh[i].np; 
+      cout<<"to: ";  cin>>marsh[i].kp;
+      cout<<"nom: ";  cin>>marsh[i].nom;
+    }	
+    while (priz)
+    {
+       priz=false;	
+       for (int i=1; i<8; i++)
+       {
+         if (marsh[i].nom<marsh[i-1].nom)
+         {  swap(marsh[i].np,marsh[i-1].np);
+            swap(marsh[i].kp,marsh[i-1].kp);
+            swap(marsh[i].nom,marsh[i-1].nom);
+            priz=true;	} 
+       }
+    }
+    cout<<endl<<"searching marsh"<<endl;
+    while (true)
+    {
+      cout<<endl<<"number of marsh: ";  cin>>n;   i=0;
+      while ((marsh[i].nom!=n) and (i<8)) i++;
+      if (i==8)  cout<<endl<<"no such number of marsh "<<n<<endl;
+      else
+      {   
+        cout<<endl<<"from: "<<marsh[i].np<<"   ";
+        cout<<"to: "<<marsh[i].kp<<"  nom: "<<marsh[i].nom<<endl;
+      }
+      cout<<endl<<"continue ? (1 or 0): ";  cin>>np;
+      if (np==0)  break;
+    }
+   
+   cout<<endl; 
+   system("pause"); 
+   return(0);
+}
+
