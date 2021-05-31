@@ -1,0 +1,202 @@
+1)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int i, j, n;
+cout << "¬ведите размеры матриц ј, B, R ";
+cin >> n;
+float **a = new float*[n]; 
+for( j = 0; j < n; j++ )
+a[j] = new float [n];
+float **b = new float*[n]; 
+for( j = 0; j < n; j++ )
+b[j] = new float [n];
+float **r = new float*[n]; 
+for( j = 0; j < n; j++ )
+r[j] = new float [n];
+for ( i = 0; i < n; i++ )
+{
+for ( j = 0; j < n; j++ )
+cin >> a[i][j];
+cout << endl;
+}
+cout << endl;
+for ( i = 0; i < n; i++ )
+{
+for ( j = 0; j < n; j++ )
+cin >> b[i][j];
+cout << endl;
+}
+cout << endl;
+for ( i = 0; i < n; i++ ) 
+for ( j = 0; j < n; j++ )
+{
+float s = 0;
+for ( int k = 0; k < n; k++ )
+s += a[i][k] * b[k][j];
+r[i][j] = s;
+}
+cout << "ќтвет" << endl; 
+for ( i = 0; i < n; i++ )
+{
+for ( j = 0; j < n; j++ )
+cout <<setw(6) << r[i][j];
+cout << endl;
+}
+for ( i = 0; i < n; i++ ) delete[] a[i]; delete[]a;
+for ( i = 0; i < n; i++ ) delete[] b[i]; delete[]b;
+for ( i = 0; i < n; i++ ) delete[] r[i]; delete[]r;
+}
+
+2)
+
+#include <iostream.h>
+int main (void)
+{
+double x=5.6, y;
+int n;
+int *p, *p1;
+p = &n; 
+p1 = &x; 
+y = *p1;
+cout<< y; 
+return 0;
+}
+
+3)
+#include <iostream.h>
+int main (void)
+{
+int x;
+int *p1, *p2;
+p1 = &x; p2 = p1;
+cout<< p2; 
+return 0
+}
+
+4)
+#include <stdio.h>
+int main()
+{
+int x, *p, **q;
+x=10;
+p=&x;
+q=&p;
+printf (У%dФ, **q);
+return 0;
+}
+
+
+5)
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+int main()
+{
+  int *a;  
+  int i, n;
+  system("chcp 1251");
+  system("cls");
+  printf("¬ведите размер массива: ");
+  scanf("%d", &n);
+  a = (int*)malloc(n * sizeof(int));
+  for (i = 0; i<n; i++)
+  {
+    printf("a[%d] = ", i);
+    scanf("%d", &a[i]);
+  }
+  for (i = 0; i<n; i++)
+    printf("%d ", a[i]);
+  free(a);
+  getchar();   getchar();
+  return 0;
+}
+
+
+6)
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+int main()
+{
+  int *a;  // указатель на массив
+  int i, j, n, m;
+  system("chcp 1251");
+  system("cls");
+  printf("¬ведите количество строк: ");
+  scanf("%d", &n);
+  printf("¬ведите количество столбцов: ");
+  scanf("%d", &m);
+  // ¬ыделение пам€ти
+  a = (int*)malloc(n*m * sizeof(int));
+  /
+  for (i = 0; i<n; i++) 
+  {
+    for (j = 0; j<m; j++) 
+    {
+      printf("a[%d][%d] = ", i, j);
+      scanf("%d", (a + i*m + j));
+    }
+  }
+  for (i = 0; i<n; i++)  
+  {
+    for (j = 0; j<m; j++)  
+    {
+      printf("%5d ", *(a + i*m + j)); 
+    }
+    printf("\n");
+  }
+  free(a);
+  getchar();   getchar();
+  return 0;
+}
+
+
+7) 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+int main()
+{
+  int **a; 
+  int i, j, n, m;
+  system("chcp 1251");
+  system("cls");
+  printf("¬ведите количество строк: ");
+  scanf("%d", &n);
+  printf("¬ведите количество столбцов: ");
+  scanf("%d", &m);
+  a = (int**)malloc(n * sizeof(int*));
+  for (i = 0; i<n; i++)  // цикл по строкам
+  {
+    a[i] = (int*)malloc(m * sizeof(int));
+    for (j = 0; j<m; j++)  
+    {
+      printf("a[%d][%d] = ", i, j);
+      scanf("%d", &a[i][j]);
+    }
+  }
+  
+  for (i = 0; i < n; i++)  
+  {
+    for (j = 0; j < m; j++)  
+    {
+      printf("%5d ", a[i][j]); 
+    }
+    printf("\n");
+  }
+
+  for (i = 0; i < n; i++)  
+    free(a[i]);   
+  free(a);
+  getchar();   getchar();
+  return 0;
+}
