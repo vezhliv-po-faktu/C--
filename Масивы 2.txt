@@ -1,0 +1,89 @@
+#include <iostream>
+
+using namespace std;
+
+
+unsigned int ex_num1() {
+	static unsigned int counter = 0;
+	return ++counter;
+};
+
+
+unsigned int cntr() {
+	static unsigned int counter = 0;
+	return counter++;
+};
+void ex_num2() {
+	unsigned int num;
+	num = cntr() % 3;
+
+	switch (num) {
+	case 0: cout << "Good morning!" << endl; break;
+
+	case 1: cout << "Good afternoon!" << endl; break;
+
+	case 2: cout << "Good evening!" << endl; break;
+	};
+};
+
+
+int ex_num3(int num) {
+	static int tnum = 0;
+	int a = tnum;
+	tnum = num;
+	return a;
+};
+
+
+unsigned int ex_num4() {
+	static unsigned int pnum = 1;
+	pnum++;
+	while (true) {
+		if (pnum <= 3) { break; };
+		if (pnum == 5) { break; };
+		if ((pnum % 2 != 0) && (pnum % 3 != 0) && (pnum % 5 != 0)) { break; }
+		pnum++;
+	};
+	return pnum;
+};
+
+
+double ex_num5(double x) {
+	static double sum = 0;
+	static int counter = 0;
+	sum += x;
+	counter++;
+	return sum / counter;
+};
+
+
+int ex_num6(int m){
+	static int save = 0;
+	int s = save;
+	save = m;
+	return 1 + s;
+};
+
+
+int main() {
+	/*ex_num2();
+	ex_num2();
+	ex_num2();
+	ex_num2();*/
+	/*cout << ex_num3(2) << endl;
+	cout << ex_num3(5) << endl;
+	cout << ex_num3(9) << endl;*/
+	/*cout << ex_num4() << endl;
+	cout << ex_num4() << endl;
+	cout << ex_num4() << endl;
+	cout << ex_num4() << endl;
+	cout << ex_num4() << endl;
+	cout << ex_num4() << endl;
+	cout << ex_num4() << endl;
+	cout << ex_num4() << endl;*/
+	cout << ex_num5(4) << endl;
+	cout << ex_num5(5) << endl;
+	cout << ex_num5(34) << endl;
+	cout << ex_num5(56) << endl;
+	return 0;
+}
